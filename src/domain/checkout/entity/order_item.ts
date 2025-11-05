@@ -40,8 +40,17 @@ export default class OrderItem {
   get price(): number {
     return this._price;
   }
-
+  changePrice(price: number) {
+    this._price = price;
+    this.validate();
+  }
   total(): number {
     return this._price * this._quantity
+  }
+  validate(): boolean{
+    if (this._price < 0) {
+      throw new Error("Price must be 0 or greater.");
+    }
+    return true;
   }
 }

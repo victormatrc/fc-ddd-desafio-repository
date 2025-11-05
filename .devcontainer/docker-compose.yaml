@@ -1,0 +1,10 @@
+version: '3'
+services: 
+  fc-ddd:
+    build: 
+      context: .
+    container_name: fc-ddd
+    
+    volumes: 
+      - ../:/var/www/html
+    tty: true
